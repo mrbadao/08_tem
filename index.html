@@ -13,9 +13,8 @@
 
 
 </head>
-<>
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-main">
+<nav class="navbar navbar-default navbar-main" id="top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -25,12 +24,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Web name</a>
+            <a class="navbar-brand" href="#"><img src="assets/images/logo-brand.png"></a>
 
             <form name="quick-search" class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search" aria-describedby="quick-search-submit">
-                    <button id="quick-search-submit" type="submit" class="btn btn-default">
+                    <button id="quick-search-submit" type="submit" class="btn btn-default hidden-xs">
                         Search
                     </button>
                 </div>
@@ -52,26 +51,36 @@
 <!--/.Fixed navbar -->
 
 <!-- Fixed slide -->
-<section class="col-sm-12 carousel slide pc-slide-home" id="home-slide" data-ride="carousel">
+<section class="col-sm-12 carousel slide pc-slide-home hidden-xs" id="home-slide" data-ride="carousel">
     <div class="container">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active container">
                 <div class="content">
+                    <div class="row slide-content-col">
+                        <div class="title">
+                            <img src="assets/images/logo01.png"/>
 
+                            <h1>Make your's bussiness to be easy.</h1>
+                            <a class="btn btn-default" onclick="scrollToElement('.home-menu a[aria-controls=\'register\']')">Register</a>
+                        </div>
+                    </div>
+                    <div class="row slide-img-col">
+                        <img src="assets/cover/cover01.png" class="img-responsive">
+                    </div>
                 </div>
                 <div class="caption">
                     <div style="background-image: url('assets/cover/discriptGm.png')"></div>
                 </div>
             </div>
-            <div class="item container">
-                <div class="content">
-
-                </div>
-                <div class="caption">
-                    <div style="background-image: url('assets/cover/discriptGm.png')"></div>
-                </div>
-            </div>
+            <!--<div class="item container">-->
+            <!--<div class="content">-->
+            <!--<img src="assets/cover/cover.png" class="img-responsive">-->
+            <!--</div>-->
+            <!--<div class="caption">-->
+            <!--<div style="background-image: url('assets/cover/discriptGm.png')"></div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!-- Controls -->
             <a class="left carousel-control" href="#home-slide" role="button" data-slide="prev"></a>
             <a class="right carousel-control" href="#home-slide" role="button" data-slide="next"></a>
@@ -111,17 +120,191 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="register">
                 <form>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 user-info">
+                        <input type="text" class="form-control" placeholder="Email Address"/>
 
+                        <div class="row wrapper">
+                            <input name="password" type="password" class="form-control" placeholder="Password"/>
+                            <input type="password" class="form-control" placeholder="Re-type"/>
+                        </div>
+                        <input type="submit" class="btn btn-info" value="Register"/>
                     </div>
-                    <div class="col-sm-6">
-                        <textarea name="term" style="width: 100%;display: block; height: 300px;"></textarea>
-                        <input type="checkbox" class="checkbox"/>
+
+                    <div class="col-sm-6 term-service">
+                        <textarea readonly>
+
+                        </textarea>
+
+                        <div class="input-group">
+                            <input type="checkbox" class="checkbox" id="agreement" aria-label="'adadad"/>
+                            <label class="label" for="agreement">I agree to the Google Terms of Service</label>
+                        </div>
                     </div>
                 </form>
             </div>
             <div role="tabpanel" class="tab-pane" id="packet">
-                asdadasdasdsd
+                <table class="table table-bordered table-packet">
+                    <tr class="header">
+                        <td class="col-sm-3">
+                            <div class="solution label-default"></div>
+                            <label class="text-center">Cá Nhân</label>
+                        </td>
+                        <td class="col-sm-3">
+                            <div class="solution label-primary"></div>
+                            <label class="text-center">Sinh Viên</label>
+                        </td>
+                        <td class="col-sm-3">
+                            <div class="solution label-success"></div>
+                            <label class="text-center">Doanh Nghiệp</label>
+                        </td>
+                        <td class="col-sm-3">
+                            <div class="solution label-danger"></div>
+                            <label class="text-center">Thương Mại Điện Tử</label>
+                        </td>
+                    </tr>
+
+                    <tr class="price">
+                        <td class="col-sm-3 label-default">
+                            <div class="num-price text-center">55.000</div>
+                            <span class="text-center">vnđ/tháng</span>
+                        </td>
+                        <td class="col-sm-3 label-primary">
+                            <div class="num-price text-center">55.000</div>
+                            <span class="text-center">vnđ/tháng</span>
+                        </td>
+                        <td class="col-sm-3 label-success">
+                            <div class="num-price text-center">55.000</div>
+                            <span class="text-center">vnđ/tháng</span>
+                        </td>
+                        <td class="col-sm-3 label-danger">
+                            <div class="num-price text-center">55.000</div>
+                            <span class="text-center">vnđ/tháng</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="info">
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                        <td class="col-sm-3 label-default">
+                            <div class="value text-center">10</div>
+                            <span class="text-center">Sub-domain</span>
+                        </td>
+                    </tr>
+
+                    <tr class="footer">
+                        <td class="col-sm-3 label-default"></td>
+                        <td class="col-sm-3 label-primary"></td>
+                        <td class="col-sm-3 label-success"></td>
+                        <td class="col-sm-3 label-danger"></td>
+                    </tr>
+
+
+                </table>
             </div>
             <div role="tabpanel" class="tab-pane" id="support">
                 111
@@ -138,18 +321,7 @@
 <footer class="col-sm-12 col-lg-12 col-xs-12">
     <div class="container">
         <div class="footer-min col-sm-12 col-lg-12 col-xs-12">
-            <section class="footer-left col-sm-3">
-                <div class="footer-title">Setting</div>
-                <ul class="list-unstyled">
-                    <li>
-                        <div class="caption pull-left">Language</div>
-                        <div class="btn btn-default pull-right">English</div>
-                    </li>
-                </ul>
-            </section>
-            <!-- /.footer-left-->
-
-            <section class="footer-middle col-sm-3 pull-left">
+            <section class="footer-middle col-sm-3 col-xs-6 pull-left">
                 <div class="footer-title">Vn-stores</div>
                 <ul class="list-unstyled">
                     <li>
@@ -172,7 +344,7 @@
             </section>
             <!-- /.footer-middle-->
 
-            <section class="footer-middle col-sm-3 pull-left row">
+            <section class="footer-middle col-sm-3 col-xs-6 pull-left row">
                 <div class="footer-title">Join with us</div>
                 <ul class="list-unstyled">
                     <li>
@@ -188,7 +360,7 @@
                 </ul>
             </section>
 
-            <section class="footer-middle col-sm-3 pull-right">
+            <section class="footer-middle col-sm-3 col-xs-6 pull-left">
                 <div class="footer-title">Policy</div>
                 <ul class="list-unstyled">
                     <li>
@@ -200,12 +372,22 @@
                 </ul>
             </section>
             <!-- /.footer-middle-->
+
+            <section class="footer-left col-sm-3 col-xs-6 pull-right">
+                <div class="footer-title">Setting</div>
+                <ul class="list-unstyled">
+                    <li>
+                        <div class="caption pull-left">Language</div>
+                        <div class="btn btn-default pull-right">English</div>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.footer-left-->
             <!-- /.footer-middle-->
         </div>
 
     </div>
-    <div class="row">
-    <div class="footer-coppyright col-sm-12 col-lg-12 col-xs-12">
+    <div class="row">        <div class="footer-coppyright col-sm-12 col-lg-12 col-xs-12">
 
             <div class="container">
                 <span class="text-center">Copyright © 2015 VN Stores Ltd.</span>
@@ -214,24 +396,32 @@
     </div>
 </footer>
 <!--/.footer-->
-
+<!--<img src="assets/images/ico_scroll_up.png" id="scrollup">-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/home.menu.js"></script>
+<script src="assets/js/plugins/jquery.scrollUp.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-            $.ajax({
-                url : "http://localhost/01_templates/08_stores/assets/docs/term.txt",
-                dataType: "text",
-                success : function (data) {
-                    $('textarea').text(data);
-                }
-            });
+        $.ajax({
+            url: "http://localhost/01_templates/08_stores/assets/docs/term.txt",
+            dataType: "text",
+            success: function (data) {
+                $('#register textarea').text(data);
+            }
+        });
 
     });
+
+    function scrollToElement(selector){
+        $(selector).click();
+        $('html,body').animate({
+                    scrollTop: $(selector).offset().top},
+                'slow');
+    }
 </script>
 </body>
 </html>

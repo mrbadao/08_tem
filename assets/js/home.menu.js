@@ -22,3 +22,4 @@ $(document).ready(function () {
         tabImg.attr('src', src + currFile + ext);
     });
 });
+
